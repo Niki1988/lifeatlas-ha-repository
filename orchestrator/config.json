@@ -1,14 +1,14 @@
 {
-  "name": "LifeAtlas Orchestrator V2",
-  "version": "1.4.1",
-  "slug": "lifeatlas_orchestrator_v2",
+  "name": "LifeAtlas Orchestrator",
+  "version": "1.4.2",
+  "slug": "lifeatlas_orchestrator",
   "description": "The central orchestrator for the LifeAtlas project, running as a Home Assistant add-on.",
   "url": "https://github.com/Niki1988/LifeAtlas",
   "arch": ["amd64", "aarch64"],
   "startup": "application",
   "boot": "auto",
   "init": false,
-  "image": "ghcr.io/niki1988/lifeatlas-orchestrator-{arch}",
+  "image": "ghcr.io/niki1988/lifeatlas-orchestrator",
   "panel_icon": "mdi:brain",
   "ports": {
     "8000/tcp": 8000
