@@ -1,6 +1,6 @@
 {
   "name": "LifeAtlas Orchestrator",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "slug": "lifeatlas_orchestrator",
   "description": "The central orchestrator for the LifeAtlas project, running as a Home Assistant add-on.",
   "url": "https://github.com/Niki1988/LifeAtlas",
@@ -18,9 +18,13 @@
   },
   "map": ["config:rw"],
   "options": {
-    "database_url": "sqlite:////config/lifeatlas.db"
+    "database_url": "sqlite:////config/lifeatlas.db",
+    "google_api_key": null,
+    "google_drive_credentials": null
   },
   "schema": {
-    "database_url": "str"
+    "database_url": "str",
+    "google_api_key": "password",
+    "google_drive_credentials": "password"
   }
 }
