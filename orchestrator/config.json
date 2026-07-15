@@ -1,6 +1,6 @@
 {
   "name": "LifeAtlas Orchestrator",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "slug": "lifeatlas_orchestrator",
   "description": "The central orchestrator for the LifeAtlas project, running as a Home Assistant add-on.",
   "url": "https://github.com/Niki1988/LifeAtlas",
