@@ -20,7 +20,7 @@ fi
 # Log which database is being used
 bashio::log.info "Using database: ${DATABASE_URL}"
 
-# Start the Uvicorn server using pdm
+# Start the Uvicorn server directly from the virtual environment
 # We bind to port 8000 as defined in config.json
 # We bind to host 0.0.0.0 to make it accessible from outside the container
-exec pdm run uvicorn app.main:app --host 0.0.0.0 --port 8000
+exec /usr/src/app/.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
