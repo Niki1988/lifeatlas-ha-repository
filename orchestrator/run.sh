@@ -3,15 +3,19 @@
 # Log the start of the script
 bashio::log.info "Starting LifeAtlas Orchestrator..."
 
-# Get configuration from add-on options
+# Get configuration from add-on options (use || true for optional fields)
 DATABASE_URL=$(bashio::config 'database_url')
-GOOGLE_API_KEY=$(bashio::config 'google_api_key')
-GOOGLE_DRIVE_CREDENTIALS=$(bashio::config 'google_drive_credentials')
+GOOGLE_API_KEY=$(bashio::config 'google_api_key' || true)
+GOOGLE_DRIVE_CREDENTIALS=$(bashio::config 'google_drive_credentials' || true)
 
-# Export variables for the application to use
+# Export variables for the application to use (only if not empty)
 export DATABASE_URL
-export GOOGLE_API_KEY
-export GOOGLE_DRIVE_CREDENTIALS
+if [ -n "$GOOGLE_API_KEY" ] && [ "$GOOGLE_API_KEY" != "null" ]; then
+    export GOOGLE_API_KEY
+fi
+if [ -n "$GOOGLE_DRIVE_CREDENTIALS" ] && [ "$GOOGLE_DRIVE_CREDENTIALS" != "null" ]; then
+    export GOOGLE_DRIVE_CREDENTIALS
+fi
 
 # Log which database is being used
 bashio::log.info "Using database: ${DATABASE_URL}"
