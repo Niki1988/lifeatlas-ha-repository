@@ -24,7 +24,7 @@
   },
   "schema": {
     "database_url": "str",
-    "google_api_key": "password",
-    "google_drive_credentials": "password"
+    "google_api_key": "password?",
+    "google_drive_credentials": "password?"
   }
 }
